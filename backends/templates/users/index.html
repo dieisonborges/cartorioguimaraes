@@ -1,0 +1,101 @@
+{% extends "backends/base.html" %}
+
+{% block content %}
+    <div class="row">
+      <section class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1>Usuários</h1>
+            </div>            
+          </div>
+        </div><!-- /.container-fluid -->
+      </section>
+
+    </div>
+    
+    <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">
+                    <a href="{% url 'backends:create_users' %}" class="btn btn-info btn">
+                         <i class="fas fa-plus"></i> Novo
+                    </a>
+                </h3> 
+                
+                <!--
+                    <form id="search" action="#" method="GET"  class="card-tools">
+                  <div class="input-group input-group-sm" style="width: 100%">                
+                        <input type="text" name="search" class="form-control float-right" placeholder="Buscar" value="">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-default" form="search"><i class="fas fa-search"></i></button>
+                        </div>
+                  </div>
+                </form>
+
+
+                -->
+                
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                  <thead>
+                    <tr>
+                      <th>Nome</th>
+                      <th>Usuário</th>
+                      <th>Email</th>
+                      <th>Editar</th>
+                      <th>Apagar</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% if users %}                        
+                        {% for user in users %}
+                            <tr>  
+                                <td>
+                                    <a href="{% url 'backends:update_users' user.id %}">
+                                        {{ user.first_name }}                                        
+                                    </a>
+                                </td>                                                             
+                                <td>
+                                    <a href="{% url 'backends:update_users' user.id %}">
+                                        {{ user.username }}                                        
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="{% url 'backends:update_users' user.id %}">
+                                        {{ user.email }}                                        
+                                    </a>
+                                </td>                       
+                                <td>
+                                    <a href="{% url 'backends:update_users' user.id %}">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="{% url 'backends:delete_users' user.id %}" class="text-danger">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </a>
+                                </td>
+                                
+                            </tr>
+                        {% endfor %}                        
+                    {% else %}
+                        <tr>
+                            <td colspan="5">Nenhum Link Encontrado.</td>                            
+                        </tr>
+                    {% endif %}                    
+                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+        <!-- /.row -->
+    
+{% endblock %}

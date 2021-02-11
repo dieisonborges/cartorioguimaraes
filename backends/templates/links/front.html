@@ -1,0 +1,62 @@
+{% extends "frontends/base.html" %}
+
+{% block content %}
+
+<div class="page-title full-color">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">                    
+                <div class="page-title-heading">
+                    <h2 class="title">Links Úteis</h2>
+                </div>
+                                 
+            </div><!-- /.col-md-12 -->  
+        </div><!-- /.row -->  
+    </div><!-- /.container -->                      
+</div>
+
+<section class="flat-row padding-v1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="course-list-table">
+                    <div class="flat-all-course">                        
+
+                        <div class="courses-list">
+                            <table class="table course-list-table">
+                                
+                                <tbody>  
+                                    {% if links %}                        
+                                        {% for link in links %}                         
+                                            <tr>                                                                              
+                                                <td>
+                                                    <a href="{{ link.link }}" target="_BLANK">
+                                                        <b>{{ link.description }}</b>                                                
+                                                    </a>
+                                                    <a href="{{ link.link }}" target="_BLANK">
+                                                        <i class="fas fa-link"></i>
+                                                    </a>
+                                                        
+                                                    
+                                                </td>  
+                                            </tr> 
+                                        {% endfor %}                        
+                                    {% else %}
+                                        <tr>
+                                            <td colspan="5">Nenhum Link Encontrado.</td>                            
+                                        </tr>
+                                    {% endif %}                                      
+                                    
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div><!-- /flat-list-table -->
+                    
+                </div>
+            </div><!-- /col-md-9 -->
+        </div><!-- /row -->
+    </div><!-- /container -->
+</section>
+    
+{% endblock %}

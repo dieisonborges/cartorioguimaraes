@@ -1,0 +1,240 @@
+{% extends "frontends/base.html" %}
+
+{% block content %}
+
+<div class="page-title full-color">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">                    
+                <div class="page-title-heading">
+                    <h2 class="title">Links Úteis</h2>
+                </div>
+                                 
+            </div><!-- /.col-md-12 -->  
+        </div><!-- /.row -->  
+    </div><!-- /.container -->                      
+</div>
+
+<section class="flat-row padding-v1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+
+                <fieldset>
+
+                    <!-- Form Name -->
+                    <legend>Dados Gerais</legend>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="nome">Nome Completo</label>
+                        <div class="col-md-8">
+                            <input class="form-control input-md" data-val="true" data-val-length="Máximo 100 caracteres" data-val-length-max="100" data-val-required="Campo obrigatório" id="nome" name="nome" placeholder="Nome Completo" type="text" value="">
+                            <span class="field-validation-valid" data-valmsg-for="nome" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="endereco">Endereço Completo</label>
+                        <div class="col-md-8">
+                            <input class="form-control input-md" data-val="true" data-val-required="Campo obrigatório" id="endereco" name="endereco" placeholder="Endereço Completo" type="text" value="">
+                            <span class="field-validation-valid" data-valmsg-for="endereco" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="telefone">Telefone</label>
+                        <div class="col-md-8">
+                            <input class="form-control input-md" data-val="true" data-val-length="Máximo 15 caracteres" data-val-length-max="15" id="telefone" name="telefone" placeholder="Telefone" type="text" value="">
+                            <span class="field-validation-valid" data-valmsg-for="telefone" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="email">E-mail</label>
+                        <div class="col-md-8">
+                            <input class="form-control input-md" data-val="true" data-val-email="Endereço de e-mail inválido" id="email" name="email" placeholder="E-mail" type="text" value="">
+                            <span class="field-validation-valid" data-valmsg-for="email" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="identidade">Identidade N°</label>
+                        <div class="col-md-8">
+                            <input class="form-control input-md" data-val="true" data-val-length="Máximo 20 carácteres" data-val-length-max="20" data-val-required="Campo obrigatório" id="identidade" name="identidade" placeholder="Identidade" type="text" value="">
+                            <span class="field-validation-valid" data-valmsg-for="identidade" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="CPF">CPF N°</label>
+                        <div class="col-md-8">
+                            <input class="form-control input-md" data-val="true" data-val-length="Deve conter 11 carácteres" data-val-length-max="11" data-val-length-min="11" data-val-regex="Somente números" data-val-regex-pattern="[0-9.]{1,}" data-val-required="Campo obrigatório" id="CPF" name="CPF" placeholder="CPF" type="text" value="">
+                            <span class="field-validation-valid" data-valmsg-for="CPF" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="dtNascimento">Data de Nascimento</label>
+                        <div class="col-md-8">
+                            <input class="form-control input-md data hasDatepicker" data-val="true" data-val-regex="Data inválida" data-val-regex-pattern="^(((((0[1-9])|([1-2][0-9])|(3[0-1]))|([1-9]))/(((0[1-9])|(1[0-2]))|([1-9]))/(([0-9]{ 2})|(((19)|([2]([0]{1})))([0-9]{2}))))$)" data-val-required="Campo obrigatório" id="dtNascimento" name="dtNascimento" type="text" value="" placeholder="Ex: 01/01/2001">
+                            <span class="field-validation-valid" data-valmsg-for="dtNascimento" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="estadoCivil">Estado Civil</label>
+                        <div class="col-md-8">
+                            <input class="form-control input-md" data-val="true" data-val-length="Máximo 20 caracteres" data-val-length-max="20" data-val-required="Campo obrigatório" id="estadoCivil" name="estadoCivil" placeholder="Estado Civil" type="text" value="">
+                            <span class="field-validation-valid" data-valmsg-for="estadoCivil" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+
+                </fieldset>
+
+
+            </div>
+
+            <div class="col-md-6">
+
+                <fieldset>
+
+                    <!-- Form Name -->
+                    <legend>Formação</legend>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="ensinoFundamental">Ensino Fundamental</label>
+                        <div class="col-md-8">
+                            <input class="form-control input-md" data-val="true" data-val-length="Máximo 150 caracteres" data-val-length-max="150" id="ensinoFundamental" name="ensinoFundamental" placeholder="Nome da Escola" type="text" value="">
+                            <span class="field-validation-valid" data-valmsg-for="ensinoFundamental" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="ensinoMedio">Ensino Médio</label>
+                        <div class="col-md-8">
+                            <input class="form-control input-md" data-val="true" data-val-length="Máximo 150 caracteres" data-val-length-max="150" id="ensinoMedio" name="ensinoMedio" placeholder="Nome da Escola" type="text" value="">
+                            <span class="field-validation-valid" data-valmsg-for="ensinoMedio" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+
+                    <div class="card-destaque card-join" style="padding:3%">
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="ensinoSuperior">Ensino Superior</label>
+                            <div class="col-md-8">
+                                <input class="form-control input-md" data-val="true" data-val-length="Máximo 150 caracteres" data-val-length-max="150" id="ensinoSuperior" name="ensinoSuperior" placeholder="Nome da Instituição" type="text" value="">
+                                <span class="field-validation-valid" data-valmsg-for="ensinoSuperior" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="curso">Curso</label>
+                            <div class="col-md-8">
+                                <input class="form-control input-md" data-val="true" data-val-length="Máximo 50 caracteres" data-val-length-max="50" id="curso" name="curso" placeholder="Curso" type="text" value="">
+                                <span class="field-validation-valid" data-valmsg-for="curso" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="periodo">Período</label>
+                            <div class="col-md-8">
+                                <input class="form-control input-md" data-val="true" data-val-length="Máximo 50 caracteres" data-val-length-max="50" id="periodo" name="periodo" placeholder="Período" type="text" value="">
+                                <span class="field-validation-valid" data-valmsg-for="periodo" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="nomeVaga">Nome da vaga</label>
+                        <div class="col-md-8">
+                            <input class="form-control input-md" data-val="true" data-val-length="Máximo 150 caracteres" data-val-length-max="150" data-val-required="Campo obrigatório" id="nomeVaga" name="nomeVaga" placeholder="Vaga Pretendida" type="text" value="">
+                            <span class="field-validation-valid" data-valmsg-for="nomeVaga" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="cursosComplementares">Cursos Complementares</label>
+                        <div class="col-md-8">
+                            <textarea class="form-control input-md" cols="20" data-val="true" data-val-length="Máximo 800 caracteres" data-val-length-max="800" id="cursosComplementares" name="cursosComplementares" placeholder="" rows="2"></textarea>
+                            <span class="field-validation-valid" data-valmsg-for="cursosComplementares" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+
+                </fieldset>
+
+
+            </div>
+
+            <div class="row" style="margin-top: 40px;">
+                <div class="col-md-12">
+                    <fieldset>
+
+                        <!-- Form Name -->
+                        <legend>Experiência Profissional</legend>
+
+                        <!-- Textarea -->
+                        <div class="margin">
+                            <p>Relacione os locais onde já trabalhou, informando nome completo da empresa, endereço e telefone, bem como PESSOA QUE POSSA DAR REFERÊNCIAS:</p>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label" for="experiencia">Experiência</label>
+                            <div class="col-md-10">
+                                <textarea class="form-control" cols="20" data-val="true" data-val-length="Máximo 800 caracteres" data-val-length-max="800" id="experiencia" name="experiencia" rows="2" style="width: 80%"></textarea>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 40px;">
+                <div class="col-md-12">
+                    <fieldset>
+
+                        <!-- Form Name -->
+                        <legend>Anexo</legend>
+
+                        <!-- Textarea -->
+                        <div class="margin">
+                            <p>Anexo com informações adicionais:</p>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <input name="data64" type="hidden" id="data64">
+                                <input type="file" name="file" data-allow="pdf,doc,docx">
+                            </div>
+                        </div>
+
+                        <br>
+                        <!-- Button -->
+                        <div class="form-group pull-left">
+                            <div class="col-md-4">
+                                <input type="submit" class="btn btn-primary" value="Enviar">
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+
+        </div>
+    </div><!-- /container -->
+</section>
+    
+{% endblock %}

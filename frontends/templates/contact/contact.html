@@ -1,0 +1,106 @@
+{% extends "frontends/base.html" %}
+
+{% block content %}
+
+<div class="page-title full-color">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">                    
+                <div class="page-title-heading">
+                    <h2 class="title">Fale Conosco</h2>
+                </div>
+                                 
+            </div><!-- /.col-md-12 -->  
+        </div><!-- /.row -->  
+    </div><!-- /.container -->                      
+</div>
+
+<section class="flat-row padding-v1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <form style="float: left;" class="form-horizontal ajax" method="post" action="../../../../Contato/FaleConosco">
+                    <fieldset>
+
+                        
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="nome">Nome Completo</label>
+                            <div class="col-md-8">
+                                <input class="form-control input-md" data-val="true" data-val-length="Máximo 100 caracteres" data-val-length-max="100" data-val-required="Campo obrigatório" id="nome" name="nome" placeholder="Nome Completo" type="text" value="">
+                                <span class="field-validation-valid" data-valmsg-for="nome" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="email">E-mail</label>
+                            <div class="col-md-8">
+                                <input class="form-control input-md" data-val="true" data-val-email="Endereço de e-mail inválido" id="email" name="email" placeholder="E-mail" type="text" value="">
+                                <span class="field-validation-valid" data-valmsg-for="email" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="telefone">Telefone</label>
+                            <div class="col-md-8">
+                                <input class="form-control input-md" data-val="true" data-val-length="Máximo 15 caracteres" data-val-length-max="15" id="telefone" name="telefone" placeholder="Telefone" type="text" value="">
+                                <span class="field-validation-valid" data-valmsg-for="telefone" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+
+                        <!-- Textarea -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="mensagem">Mensagem</label>
+                            <div class="col-md-8">
+                                <textarea class="form-control input-md" cols="20" data-val="true" data-val-length="Máximo 1.000 caracteres" data-val-length-max="1000" id="mensagem" name="mensagem" placeholder="" rows="2"></textarea>
+                                <span class="field-validation-valid" data-valmsg-for="mensagem" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+
+
+                        <!-- Button -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="enviar"></label>
+                            <div class="col-md-4">
+                                <button id="enviar" name="enviar" class="btn btn-default">Enviar</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="panel well">
+                <div class="panel-head">
+                    <h2 class="h4">Contate-nos também por:</h2>
+                </div>
+                <div class="panel-body">
+                    <ul class="list-unstyled">
+                        <h3><i class="fa fa-phone" aria-hidden="true"></i> Telefone</h3>
+                        <li>
+                            
+                            <p class="text-strong">                        
+                                <i class="fa fa-phone" aria-hidden="true"></i> (34) 3823-1445</p>
+                        </li>
+                                
+                        <li>
+                            <i class="fa fa-whatsapp" aria-hidden="true"></i> (34) 9 9835-7168 
+                        </li>
+        
+                        <br>
+                        
+                        <li>
+                            <h3><i class="fa fa-envelope-o" aria-hidden="true"></i> E-mail:</h3>
+                            <p class="text-strong">
+                                registrocivilpatos@gmail.com
+        
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div><!-- /row -->
+    </div><!-- /container -->
+</section>
+    
+{% endblock %}

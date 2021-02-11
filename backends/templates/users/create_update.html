@@ -1,0 +1,72 @@
+{% extends "backends/base.html" %}
+
+{% load widget_tweaks %}
+
+{% block content %}
+
+    <div class="fieldWrapper">
+        {{ form.subject.errors }}
+        {{ form.subject.label_tag }}
+        {{ form.subject }}
+    </div>    
+
+    <div class="card card-default">
+        <div class="card-header">
+        <h3 class="card-title"><i class="fas fa-tasks"></i> Contas de Usuário</h3>
+        </div>
+        <!-- /.card-header -->
+        <!-- form start -->
+        <form method="POST" action=".">
+        {% csrf_token %}
+        <input type="hidden" value="{{ ticket_id }}" name="ticket_id">
+        {{ form.errors }}
+        {{ form.non_field_errors }}
+        <div class="card-body">
+            <div class="form-group">
+            {{ form.first_name.errors }}
+            <label for="{{ form.first_name.id_for_label }}">{{ form.first_name.label }}</label>                    
+            {% render_field form.first_name class+="form-control"  %}
+            </div>
+            <div class="form-group">
+            {{ form.last_name.errors }}
+            <label for="{{ form.last_name.id_for_label }}">{{ form.last_name.label }}</label>                    
+            {% render_field form.last_name class+="form-control"  %}
+            </div> 
+            <div class="form-group">
+                {{ form.username.errors }}
+                <label for="{{ form.username.id_for_label }}">{{ form.username.label }}</label>                    
+                {% render_field form.username class+="form-control"  %}
+            </div>       
+            
+            {% if form.password %}
+
+            <div class="form-group">
+                {{ form.password.errors }}
+                <label for="{{ form.password.id_for_label }}">{{ form.password.label }}</label>                    
+                {% render_field form.password class+="form-control" type="password"  %}
+            </div>
+            <div class="form-group">
+                {{ form.confirm_password.errors }}
+                <label for="{{ form.confirm_password.id_for_label }}">{{ form.confirm_password.label }}</label>                    
+                {% render_field form.confirm_password class+="form-control" type="password"  %}
+            </div>
+               
+            {% endif %}
+                     
+            
+            <div class="form-group">
+                {{ form.email.errors }}
+                <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>                    
+                {% render_field form.email class+="form-control" type="email"  %}
+            </div> 
+                                
+        </div>
+        <!-- /.card-body -->
+
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Salvar</button>
+        </div>
+        </form>
+    </div>
+
+{% endblock %}

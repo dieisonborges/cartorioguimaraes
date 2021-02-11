@@ -1,0 +1,128 @@
+{% extends "backends/base.html" %}
+
+{% block content %}
+
+<!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-info">
+                <div class="inner">
+                  <h3>Gerenciar</h3>
+  
+                  <p>Usuários</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <a href="{% url 'backends:index_users' %}" class="small-box-footer">Mais <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-success">
+                <div class="inner">
+                  <h3>Gerenciar</h3>
+  
+                  <p>Links Úteis</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-tasks"></i>
+                </div>
+                <a href="{% url 'backends:index_links' %}" class="small-box-footer">Mais <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+            
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-secondary">
+                <div class="inner">
+                  <h3>Gerenciar</h3>
+  
+                  <p>Serviços</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-concierge-bell"></i>
+                </div>
+                <a href="{% url 'backends:index_services' %}" class="small-box-footer">Mais <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-warning">
+                  <div class="inner">
+                    <h3>Gerenciar</h3>
+    
+                    <p>Institucional</p>
+                  </div>
+                  <div class="icon">
+                      <i class="fas fa-building"></i>
+                  </div>
+                  <a href="{% url 'backends:update_institucional' 'principal' %}" class="small-box-footer">Mais <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+              <!-- ./col -->
+          </div>
+        
+        </div><!-- /.container-fluid -->
+        <div class="row">
+            <div class="col-lg-4 col-6">
+              <!-- small box -->
+              <div class="small-box bg-info">
+                <div class="inner">
+                  <h3>Gerenciar</h3>
+  
+                  <p>Missão</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-building"></i>
+                </div>
+                <a href="{% url 'backends:update_institucional' 'missao' %}" class="small-box-footer">Mais <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-4 col-6">
+              <!-- small box -->
+              <div class="small-box bg-success">
+                <div class="inner">
+                  <h3>Gerenciar</h3>
+  
+                  <p>Visão</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-building"></i>
+                </div>
+                <a href="{% url 'backends:update_institucional' 'visao' %}" class="small-box-footer">Mais <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+            
+            <div class="col-lg-4 col-6">
+              <!-- small box -->
+              <div class="small-box bg-secondary">
+                <div class="inner">
+                  <h3>Gerenciar</h3>
+  
+                  <p>Valores</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-building"></i>
+                </div>
+                <a href="{% url 'backends:update_institucional' 'valores' %}" class="small-box-footer">Mais <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+            <!-- ./col -->
+            
+          </div>
+        
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+
+{% endblock %}

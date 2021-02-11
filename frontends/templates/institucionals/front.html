@@ -1,0 +1,61 @@
+{% extends "frontends/base.html" %}
+
+{% block content %}
+
+<div class="page-title full-color">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">                    
+                <div class="page-title-heading">
+                    <h2 class="title">Institucional</h2>
+                </div>
+                                 
+            </div><!-- /.col-md-12 -->  
+        </div><!-- /.row -->  
+    </div><!-- /.container -->                      
+</div>
+
+<section class="flat-row padding-v1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="course-list-table">
+                    <div class="flat-all-course">                        
+
+                        <div class="courses-list">
+                            {{ principal.description }}
+                        </div>
+                    </div><!-- /flat-list-table -->
+                    
+                </div>
+            </div><!-- /col-md-9 -->
+            <div class="col-md-4">
+                <div class="course-list-table">
+                    <div class="flat-all-course">                        
+
+                        <div class="courses-list">
+                            <b>{{ missao.name }}</b>
+                            <br>
+                            {{ missao.description }}
+                        </div>
+                        <br><br>
+                        <div class="courses-list">
+                            <b>{{ visao.name }}</b>
+                            <br>
+                            {{ visao.description }}
+                        </div>
+                        <br><br>
+                        <div class="courses-list">
+                            <b>{{ valores.name }}</b>
+                            <br>
+                            {{ valores.description }}
+                        </div>
+                    </div><!-- /flat-list-table -->
+                    
+                </div>
+            </div><!-- /col-md-9 -->
+        </div><!-- /row -->
+    </div><!-- /container -->
+</section>
+    
+{% endblock %}

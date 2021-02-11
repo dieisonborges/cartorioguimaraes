@@ -1,0 +1,291 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <!-- Meta tags Obrigatórias -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>Cartório Guimarães</title>
+
+        <meta name="author" content="Sérgio Lima – Agência Propagando">
+
+        <!-- Font Awesome -->
+  <link rel="stylesheet" href="/static/backends/bower_components/admin-lte/plugins/fontawesome-free/css/all.min.css">
+        
+        <link rel="stylesheet" type="text/css" href="{% static 'frontends/stylesheets/bootstrap.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'frontends/stylesheets/style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'frontends/stylesheets/responsive.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'frontends/stylesheets/colors/color1.css' %}" id="colors">
+        <link rel="stylesheet" type="text/css" href="{% static 'frontends/stylesheets/animate.css' %}">
+        
+        <link href="{% static 'frontends/icon/apple-touch-icon-48-precomposed.png' %}" rel="apple-touch-icon-precomposed" sizes="48x48">
+        <link href="{% static 'frontends/icon/apple-touch-icon-32-precomposed.png' %}" rel="apple-touch-icon-precomposed">
+        <link href="#" rel="shortcut icon">
+
+        <!-- Ícones -->
+        <link rel="apple-touch-icon" sizes="57x57" href="{% static 'frontends/images/logo/apple-icon-57x57.png' %}">
+        <link rel="apple-touch-icon" sizes="60x60" href="{% static 'frontends/images/logo/apple-icon-60x60.png' %}">
+        <link rel="apple-touch-icon" sizes="72x72" href="{% static 'frontends/images/logo/apple-icon-72x72.png' %}">
+        <link rel="apple-touch-icon" sizes="76x76" href="{% static 'frontends/images/logo/apple-icon-76x76.png' %}">
+        <link rel="apple-touch-icon" sizes="114x114" href="{% static 'frontends/images/logo/apple-icon-114x114.png' %}">
+        <link rel="apple-touch-icon" sizes="120x120" href="{% static 'frontends/images/logo/apple-icon-120x120.png' %}">
+        <link rel="apple-touch-icon" sizes="144x144" href="{% static 'frontends/images/logo/apple-icon-144x144.png' %}">
+        <link rel="apple-touch-icon" sizes="152x152" href="{% static 'frontends/images/logo/apple-icon-152x152.png' %}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'frontends/images/logo/apple-icon-180x180.png' %}">
+        <link rel="icon" type="image/png" sizes="192x192"  href="{% static 'frontends/images/logo/android-icon-192x192.png' %}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'frontends/images/logo/favicon-32x32.png' %}">
+        <link rel="icon" type="image/png" sizes="96x96" href="{% static 'frontends/images/logo/favicon-96x96.png' %}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'frontends/images/logo/favicon-16x16.png' %}">
+        <link rel="manifest" href="{% static 'frontends/images/logo/manifest.json' %}">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="{% static 'frontends/images/logo/ms-icon-144x144.png' %}">
+        <meta name="theme-color" content="#ffffff">
+    </head>
+    <body class="header-sticky">
+        <div class="boxed">
+            <div class="menu-hover">
+                <div class="btn-menu">
+                    <span></span>
+                </div><!-- //mobile menu button -->
+            </div>
+            <div class="header-inner-pages">
+                <div class="top">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <a class="navbar-right search-toggle show-search" href="#">
+                                    <i class="fa fa-search"></i>
+                                </a>
+                                <div class="submenu top-search">
+                                    <form class="search-form">
+                                        <div class="input-group">
+                                            <input type="search" class="search-field" placeholder="Busca">
+                                            <span class="input-group-btn">
+                                                <button type="submit"><i class="fa fa-search fa-4x"></i></button>
+                                            </span>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="navbar-right topnav-sidebar">
+                                    <ul class="textwidget">
+                                        <li>
+                                            <a href="#"><i class="fa fa-envelope"></i> &nbsp;registrocivilpatos@gmail.com</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fa fa-phone"></i> &nbsp;(34) 9 9835-7168</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fa fa-phone"></i> &nbsp;(34) 3823-1445</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fa fa-facebook"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fa fa-instagram"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div><!-- col-md-12 -->
+                        </div><!-- row -->
+                    </div><!-- container -->
+                </div><!-- Top -->    
+            </div><!-- header-inner-pages -->
+
+            <!-- Header -->
+            <header id="header" class="header">
+                <div class="header-wrap">
+                    <div class="container">
+                        <div class="header-wrap clearfix">
+                            <div id="logo" class="logo">
+                                <a href="{% url 'frontends:index' %}" rel="home">
+                                    <img src="{% static 'frontends/images/logo.png' %}" width="170px" alt="Cartório Guimarães" >
+                                </a>
+                            </div><!-- /.logo -->
+                            <div class="nav-wrap">
+                                <nav id="mainnav" class="mainnav">
+                                    <ul class="menu"> 
+                                        <li class="home">
+                                            <a href="{% url 'frontends:index' %}">Home</a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'frontends:front_institucional' %}">Sobre nós</a>
+                                        </li> 
+                                        <li>
+                                            <a href="#">Serviços</a>
+                                            <ul class="submenu">
+                                                {% if services %}                        
+                                                    {% for service in services %}
+                                                        <li><a href="{% url 'frontends:front_services' service.slug %}">{{ service.name }}</a>
+                                                    {% endfor %}                        
+                                                {% else %}
+                                                        <li><a href="#">Em breve</a>
+                                                {% endif %}
+                                                        
+                                            </ul><!-- /.submenu -->
+                                        </li> 
+                                        
+                                        <li>
+                                            <a href="{% url 'frontends:front_links' %}">Links úteis</a>
+                                        </li> 
+                                        <li>
+                                            <a href="">Contato</a>
+                                            <ul class="submenu submenu-right">
+                                                <li><a href="{% url 'frontends:contact' %}">Contato</a></li>
+                                                <li><a href="{% url 'frontends:working' %}">Trabalhe conosco</a></li>
+                                            </ul><!-- /.submenu -->
+                                        </li> 
+                                    </ul><!-- /.menu -->
+                                </nav><!-- /.mainnav -->
+                            </div><!-- /.nav-wrap -->
+                        </div><!-- /.header-wrap -->
+                    </div><!-- /.container-->
+                </div><!-- /.header-wrap-->
+            </header><!-- /.header -->
+        
+        
+
+            
+
+            {% block content %}{% endblock content %}
+
+
+
+        <footer class="footer full-color">
+            <section id="bottom">
+                <div class="section-inner">
+                    <div class="container">
+                        <div class="row normal-sidebar">
+                            
+                            <div class="col-md-3  widget widget-nav-menu">
+                                <div class=" widget-inner">
+                                    <h2 class="widget-title maincolor1">Serviços</h2>
+                                    <div class="menu-law-business-container">
+                                        <ul id="menu-law-business" class="menu">
+                                            {% if services %}                        
+                                                {% for service in services %}
+                                                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1280">
+                                                        <a href="{% url 'frontends:front_services' service.slug %}">{{ service.name }}</a>
+                                                    </li>                                                
+                                                {% endfor %}                        
+                                            {% else %}
+                                                    <li><a href="#">Em breve</a>
+                                            {% endif %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class=" col-md-3  widget widget-nav-menu">
+                                <div class=" widget-inner">
+                                    <h2 class="widget-title maincolor1">LINKS ÚTEIS</h2>
+                                    <div class="menu-engineering-container">
+                                        <ul id="menu-engineering" class="menu">
+                                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1287">
+                                                <a href="#">Information Technology</a>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>  
+                            </div>
+
+                            <div class=" col-md-3  widget widget-nav-menu">
+                                <div class=" widget-inner">
+                                    <h2 class="widget-title maincolor1">INSTITUCIONAL</h2>
+                                    <div class="menu-higher-education-container">
+                                        <ul id="menu-higher-education" class="menu">
+                                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1294">
+                                                <a href="#">Master Of Taxation</a>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class=" col-md-3 border widget widget-text">
+                                <div class=" widget-inner">
+                                    <h2 class="widget-title maincolor1">CONTATO</h2>
+                                    <div class="textwidget">
+                                        <p><b>Email:</b> registrocivilpatos@gmail.com<br><b>Telefone:</b> (34) 3823-1445<br>
+                                        <b>Endereço:</b> R. Dr. Marcolino, 139 - Centro, Patos de Minas - MG, 38700-160</p>
+                                    </div>
+                                </div>
+                            </div>                           
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div id="bottom-nav">
+                <div class="container">
+                    <div class="link-center">
+                        <div class="line-under"></div>
+                        <a class="flat-button go-top-v1 style1" href="#top">
+                            <i class="fas fa-chevron-up"></i> 
+                        </a>
+                    </div>
+                    <div class="row footer-content">
+                        <div class="copyright col-md-6">
+                            © 2021 Cartório Guimarães - Copyright - Todos os direitos reservados.
+                        </div>
+                        <nav class="col-md-6 footer-social">
+                            <ul class="social-list">
+                                <li>
+                                    <a href="#" class="btn btn-default social-icon">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="btn btn-default social-icon">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>    
+                                    <a href="#" class="btn btn-default social-icon">
+                                        <i class="fa fa-linkedin"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="btn btn-default social-icon">
+                                        <i class="fa fa-google-plus"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div><!--/row-->
+                </div><!--/container-->
+            </div>
+        </footer>
+
+        <!-- Javascript -->
+        <script type="text/javascript" src="{% static 'frontends/javascript/jquery.min.js' %}"></script>
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+        <script type="text/javascript" src="{% static 'frontends/javascript/bootstrap.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'frontends/javascript/jquery.easing.js' %}"></script>
+        <script type="text/javascript" src="{% static 'frontends/javascript/jQuery.verticalCarousel.js' %}"></script>
+        <script type="text/javascript" src="{% static 'frontends/javascript/owl.carousel.js' %}"></script>
+        <script type="text/javascript" src="{% static 'frontends/javascript/parallax.js' %}"></script>
+        <script type="text/javascript" src="{% static 'frontends/javascript/jquery-waypoints.js' %}"></script>
+        <script type="text/javascript" src="{% static 'frontends/javascript/jquery.tweet.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'frontends/javascript/jquery.matchHeight-min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'frontends/javascript/jquery-validate.js' %}"></script>
+        
+        
+
+        <!-- Revolution Slider -->
+        <script type="text/javascript" src="{% static 'frontends/javascript/jquery.themepunch.tools.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'frontends/javascript/jquery.themepunch.revolution.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'frontends/javascript/slider.js' %}"></script>
+        
+        
+        <script type="text/javascript" src="{% static 'frontends/javascript/jquery.cookie.js' %}"></script> 
+        <script type="text/javascript" src="{% static 'frontends/javascript/main.js' %}"></script>
+
+        {% block scripts %}{% endblock scripts %}
+    </div>
+</body>
+</html>
