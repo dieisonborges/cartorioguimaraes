@@ -15,7 +15,11 @@ urlpatterns = [
     #Links
     path("links/", views.front_links, name="front_links"),
 
+    #Archives
+    path("modelos/", views.front_archives, name="front_archives"),
+
     #Contact
     path("contato/", views.contact, name="contact"),
-    path("trabalheconosco/", views.working, name="working"),
+    path("trabalheconosco/", views.working, name="working"),    
+    
 ]

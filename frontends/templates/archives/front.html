@@ -1,0 +1,64 @@
+{% extends "frontends/base.html" %}
+
+{% block content %}
+
+<div class="page-title full-color">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">                    
+                <div class="page-title-heading">
+                    <h2 class="title">Modelos</h2>
+                </div>
+                                 
+            </div><!-- /.col-md-12 -->  
+        </div><!-- /.row -->  
+    </div><!-- /.container -->                      
+</div>
+
+<section class="flat-row padding-v1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="course-list-table">
+                    <div class="flat-all-course">                        
+
+                        <div class="courses-list">
+                            <table class="table course-list-table">
+                                
+                                <tbody>  
+                                    {% if archives %}                        
+                                        {% for archive in archives %}                         
+                                            <tr>                                                                              
+                                                <td>
+                                                    <a href="{% url 'frontends:index' %}media/{{archive.docfile}}" target="_BLANK">
+                                                        <i class="fas fa-archive"></i>
+                                                        {{ archive.name}}
+                                                    </a> 
+                                                    
+                                                    <a href="{% url 'frontends:index' %}media/{{archive.docfile}}" class="btn btn-primary" target="_blank">
+                                                        <i class="fas fa-link"></i>
+                                                    </a>
+                                                                                                          
+                                                    
+                                                </td>  
+                                            </tr> 
+                                        {% endfor %}                        
+                                    {% else %}
+                                        <tr>
+                                            <td colspan="5">Nenhum archive Encontrado.</td>                            
+                                        </tr>
+                                    {% endif %}                                      
+                                    
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div><!-- /flat-list-table -->
+                    
+                </div>
+            </div><!-- /col-md-9 -->
+        </div><!-- /row -->
+    </div><!-- /container -->
+</section>
+    
+{% endblock %}

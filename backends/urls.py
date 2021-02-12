@@ -34,4 +34,11 @@ urlpatterns = [
 
     #Institucional
     path("institucional/alterar/<slug:slug_institucional>/", views.update_institucional, name="update_institucional"),
+
+    #Archives
+    path("modelos/", views.index_archives, name="index_archives"),
+    path("modelos/criar/", views.create_archives, name="create_archives"),
+    path("modelos/alterar/<int:archive_id>/", views.update_archives, name="update_archives"),
+    path("modelos/apagar/<int:archive_id>/", views.delete_archives, name="delete_archives"),
+
 ]

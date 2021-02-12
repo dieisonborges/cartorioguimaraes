@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 
-from .models import Links, Services, Institutionals
+from .models import Links, Services, Institutionals, Archives
 
 #Users
 class UserForm(forms.ModelForm):
@@ -32,3 +32,10 @@ class InstitucionalForm(forms.ModelForm):
     class Meta:
         model = Institutionals
         fields = ('description', 'name')
+
+#Arquivos
+class ArchiveForm(forms.ModelForm):
+    class Meta:
+        model = Archives
+        fields = ('name', 'category', 'docfile')
+

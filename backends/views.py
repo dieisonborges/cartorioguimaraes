@@ -7,9 +7,15 @@ from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm
 from django.utils.text import slugify
+from django.template import RequestContext, context
+import os
+import shutil
+from pathlib import Path
 
-from .forms import UserForm, UserFormUpdate, LinksForm, ServicesForm, InstitucionalForm
-from .models import Links, Services, Institutionals
+
+from .forms import UserForm, UserFormUpdate, LinksForm, ServicesForm, InstitucionalForm, ArchiveForm
+
+from .models import Links, Services, Institutionals, Archives
 
 # Create your views here.
 
@@ -235,3 +241,52 @@ def update_institucional(request, slug_institucional):
         form = InstitucionalForm(instance=institucional)
         context['form'] = form
     return render(request, template_name, context)
+
+#Archives
+@login_required
+def index_archives(request):
+    template_name = 'archives/index.html'
+    archives = Archives.objects.all()
+    context = {
+        'archives': archives,
+    }
+    return render(request, template_name, context)  
+
+@login_required
+def create_archives(request):
+    template_name = 'archives/create_update.html'
+    context = {}
+    if request.method == 'POST':
+        form = ArchiveForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()            
+            messages.success(request, 'Adicionado com sucesso!')
+            return HttpResponseRedirect(reverse('backends:index_archives'))
+    form = ArchiveForm()
+    context['form'] = form
+    return render(request, template_name, context) 
+
+@login_required
+def update_archives(request, archive_id):
+    template_name = 'archives/create_update.html'
+    context = {}
+    archive = get_object_or_404(Archives, id=archive_id)
+    if request.method == 'POST':
+        form = ArchiveForm(request.POST, request.FILES, instance=archive)
+        if form.is_valid():
+            form.save()            
+            messages.success(request, 'Adicionado com sucesso!')
+            return HttpResponseRedirect(reverse('backends:index_archives'))
+    else:        
+        form = ArchiveForm(instance=archive)
+        context['form'] = form
+    return render(request, template_name, context) 
+
+@login_required
+def delete_archives(request, archive_id):
+    archives = get_object_or_404(Archives, id=archive_id)
+    if archives.docfile:        
+        archives.docfile.delete(save=True)
+    archives.delete()
+    messages.success(request, 'Removido com sucesso!')        
+    return HttpResponseRedirect(reverse('backends:index_archives'))
