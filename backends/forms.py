@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 
-from .models import Links, Services, Institutionals, Archives
+from .models import Links, Services, Institutionals, Archives, CategoryArchives
 
 #Users
 class UserForm(forms.ModelForm):
@@ -38,4 +38,10 @@ class ArchiveForm(forms.ModelForm):
     class Meta:
         model = Archives
         fields = ('name', 'category', 'docfile')
+
+#Categoria dos Arquivos
+class CategoryArchiveForm(forms.ModelForm):
+    class Meta:
+        model = CategoryArchives
+        fields = ('name', 'mother_category')
 

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 
-from backends.models import Links, Services, Institutionals, Archives
+from backends.models import Links, Services, Institutionals, Archives, CategoryArchives
 
 # Create your views here.
 def index(request):    
@@ -68,15 +68,19 @@ def front_links(request):
     return render(request, template_name, context)
 
 #Archives
-def front_archives(request):    
+def front_archives(request): 
+    #Serviços   
     services = Services.objects.order_by('-created_at')
-
+    #Categorias dos Modelos
+    category_archives = CategoryArchives.objects.all().order_by('-mother_category')
+    #Modelos
     archives = Archives.objects.order_by('-created_at')
     template_name = 'archives/front.html'
 
     context = {
         'archives': archives,
-        'services': services
+        'services': services,
+        'category_archives': category_archives
     }    
     return render(request, template_name, context)
 

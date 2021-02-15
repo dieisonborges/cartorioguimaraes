@@ -41,4 +41,10 @@ urlpatterns = [
     path("modelos/alterar/<int:archive_id>/", views.update_archives, name="update_archives"),
     path("modelos/apagar/<int:archive_id>/", views.delete_archives, name="delete_archives"),
 
+    #Category Archives
+    path("modelos/categoria/", views.index_category_archives, name="index_category_archives"),
+    path("modelos/categoria/criar/", views.create_category_archives, name="create_category_archives"),
+    path("modelos/categoria/alterar/<int:category_archive_id>/", views.update_category_archives, name="update_category_archives"),
+    path("modelos/categoria/apagar/<int:category_archive_id>/", views.delete_category_archives, name="delete_category_archives"),
+
 ]

@@ -17,48 +17,103 @@
 
 <section class="flat-row padding-v1">
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="course-list-table">
-                    <div class="flat-all-course">                        
 
-                        <div class="courses-list">
-                            <table class="table course-list-table">
-                                
-                                <tbody>  
-                                    {% if archives %}                        
-                                        {% for archive in archives %}                         
-                                            <tr>                                                                              
-                                                <td>
-                                                    <a href="{% url 'frontends:index' %}media/{{archive.docfile}}" target="_BLANK">
-                                                        <i class="fas fa-archive"></i>
-                                                        {{ archive.name}}
-                                                    </a> 
-                                                    
-                                                    <a href="{% url 'frontends:index' %}media/{{archive.docfile}}" class="btn btn-primary" target="_blank">
-                                                        <i class="fas fa-link"></i>
-                                                    </a>
-                                                                                                          
-                                                    
-                                                </td>  
-                                            </tr> 
-                                        {% endfor %}                        
-                                    {% else %}
-                                        <tr>
-                                            <td colspan="5">Nenhum archive Encontrado.</td>                            
-                                        </tr>
-                                    {% endif %}                                      
-                                    
-                                    
-                                </tbody>
-                            </table>
-                        </div>
-                    </div><!-- /flat-list-table -->
+        <div class="row">
+            {% if category_archives %}                        
+                {% for category_archive in category_archives  %}
                     
-                </div>
-            </div><!-- /col-md-9 -->
-        </div><!-- /row -->
+                    {% if not category_archive.mother_category %}
+
+                    <div class="col-md-12" style="margin-bottom: 10px;">
+                        <p>
+                            <a class="btn btn-primary" data-toggle="collapse" href="#collapse{{ category_archive.id }}" role="button" aria-expanded="false" aria-controls="collapse{{ category_archive.id }}">
+                                <i class="fas fa-plus"></i>
+                                {{ category_archive.name }}
+                            </a>
+                        </p>
+                        <div class="collapse" id="collapse{{ category_archive.id }}">
+                            <div class="card card-body  table-responsive p-0">
+                                    <table class="table table-hover text-nowrap">
+                                        <thead>
+                                            <tr>
+                                              <th></th>
+                                              <th></th>
+                                            </tr>
+                                          </thead>
+                                      
+                                      <tbody>
+                                        {% for archive in archives  %}
+                                    
+                                            {% if archive.category == category_archive%} 
+                                                <tr>                                                               
+                                                    <td>
+                                                        <a href="{% url 'frontends:index' %}media/{{archive.docfile}}" target="_blank">
+                                                            <h5 class="h5">{{ archive.name}}</h5>
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="{% url 'frontends:index' %}media/{{archive.docfile}}" class="btn btn-primary" target="_blank">
+                                                            Download
+                                                            <i class="fas fa-link"></i>
+                                                        </a>
+                                                    </td>                                               
+                                                    
+                                                </tr>
+                                                
+                                            {% endif %}
+                                    
+                                        {% endfor %}    
+                                        <tr>                                                               
+                                            <td>
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                            </td>                                             
+                                            
+                                        </tr>                  
+                                                          
+                                        
+                                      </tbody>
+                                    </table>
+                            
+                            </div>
+                        </div>
+
+                        <!-- Sub Category -->
+                    {% for category_archive_sub in category_archives  %}
+
+                        
+                        {% if category_archive_sub == category_archive.mother_category %}
+                            
+                            ok
+
+                        {% endif %}
+                            
+
+                    {% endfor %}
+
+                    </div>    
+                        
+                    {% endif %}
+                    
+                {% endfor %}
+            {% endif %}   
+        </div>
+        
+        
+        
+        
+
+        
     </div><!-- /container -->
 </section>
+
+
+
     
 {% endblock %}
+
+{% block scripts %}
+{% endblock scripts %}
+

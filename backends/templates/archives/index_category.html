@@ -5,8 +5,8 @@
       <section class="content-header">
         <div class="container-fluid">
           <div class="row mb-2">
-            <div class="col-sm-6">
-              <h1>Modelos</h1>
+            <div class="col-md-12">
+              <h1>Categorias do Modelo</h1>
             </div>            
           </div>
         </div><!-- /.container-fluid -->
@@ -21,8 +21,8 @@
                 {{ form }}
               <div class="card-header">
                 <h3 class="card-title">
-                    <a href="{% url 'backends:create_archives' %}" class="btn btn-info btn">
-                         <i class="fas fa-plus"></i> Novo
+                    <a href="{% url 'backends:create_category_archives' %}" class="btn btn-info btn">
+                         <i class="fas fa-plus"></i> Nova
                     </a>
                 </h3> 
                 
@@ -43,49 +43,41 @@
                 <table class="table table-hover text-nowrap">
                   <thead>
                     <tr>
-                      <th>Nome</th>
-                      <th>Categoria</th>
-                      <th>Arquivo</th>                    
+                      <th>Nome</th>  
+                      <th>Categoria Mãe</th>               
                       <th>Edit</th>
                       <th>Delete</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {% if archives %}                        
-                        {% for archive in archives %}
+                    {% if category_archives %}                        
+                        {% for category_archive in category_archives  %}
                             <tr>                                                               
                                 <td>
-                                    <a href="{% url 'backends:update_archives' archive.id %}">
-                                        {{ archive.name}}
+                                    <a href="{% url 'backends:update_category_archives' category_archive.id %}">
+                                        {{ category_archive.name}}
                                     </a>
                                 </td>
                                 <td>
-                                    <a href="{% url 'backends:update_archives' archive.id %}">
+                                    <a href="{% url 'backends:update_category_archives' category_archive.id %}">
                                         
-                                    <span class="badge badge-secondary bg-info">
-                                        
-                                        {% if archive.category %}
-                                            {{ archive.category.name}}
-                                        {% else %}
-                                            Nenhuma
-                                        {% endif %}
-                                    </span>
-
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="{% url 'frontends:index' %}media/{{archive.docfile}}" class="btn btn-primary" target="_blank">
-                                        Download
-                                        <i class="fas fa-link"></i>
+                                        <span class="badge badge-secondary bg-info">
+                                            
+                                            {% if category_archive.mother_category %}
+                                                {{ category_archive.mother_category}}
+                                            {% else %}
+                                                Nenhuma
+                                            {% endif %}
+                                        </span>
                                     </a>
                                 </td>
                                 <td align="center">
-                                    <a href="{% url 'backends:update_archives' archive.id %}">
+                                    <a href="{% url 'backends:update_category_archives' category_archive.id %}">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                 </td>
                                 <td align="center">
-                                    <a href="{% url 'backends:delete_archives' archive.id %}" class="text-danger">
+                                    <a href="{% url 'backends:delete_category_archives' category_archive.id %}" class="text-danger">
                                         <i class="fas fa-trash-alt"></i>
                                     </a>
                                 </td>

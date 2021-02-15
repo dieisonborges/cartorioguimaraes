@@ -1,21 +1,19 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import logout, authenticate, login, update_session_auth_hash
 from django.contrib.auth.models import User
-from django.http import HttpResponse, Http404, HttpResponseRedirect
+from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm
 from django.utils.text import slugify
-from django.template import RequestContext, context
-import os
-import shutil
-from pathlib import Path
+from django.db import IntegrityError
 
 
-from .forms import UserForm, UserFormUpdate, LinksForm, ServicesForm, InstitucionalForm, ArchiveForm
+from .forms import InstitucionalForm, ArchiveForm, CategoryArchiveForm
+from .forms import UserForm, UserFormUpdate, LinksForm, ServicesForm
 
-from .models import Links, Services, Institutionals, Archives
+from .models import Links, Services, Institutionals, Archives, CategoryArchives
 
 # Create your views here.
 
@@ -290,3 +288,54 @@ def delete_archives(request, archive_id):
     archives.delete()
     messages.success(request, 'Removido com sucesso!')        
     return HttpResponseRedirect(reverse('backends:index_archives'))
+
+#Category Archives
+@login_required
+def index_category_archives(request):
+    template_name = 'archives/index_category.html'
+    category_archives = CategoryArchives.objects.all().order_by('-mother_category')
+    context = {
+        'category_archives': category_archives,
+    }
+    return render(request, template_name, context)  
+
+@login_required
+def create_category_archives(request):
+    template_name = 'archives/create_update_category.html'
+    context = {}
+    if request.method == 'POST':
+        form = CategoryArchiveForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()            
+            messages.success(request, 'Adicionado com sucesso!')
+            return HttpResponseRedirect(reverse('backends:index_category_archives'))
+    form = CategoryArchiveForm()
+    context['form'] = form
+    return render(request, template_name, context) 
+
+@login_required
+def update_category_archives(request, category_archive_id):
+    template_name = 'archives/create_update_category.html'
+    context = {}
+    archive = get_object_or_404(CategoryArchives, id=category_archive_id)
+    if request.method == 'POST':
+        form = CategoryArchiveForm(request.POST, request.FILES, instance=archive)
+        if form.is_valid():
+            form.save()            
+            messages.success(request, 'Adicionado com sucesso!')
+            return HttpResponseRedirect(reverse('backends:index_category_archives'))
+    else:        
+        form = CategoryArchiveForm(instance=archive)
+        context['form'] = form
+    return render(request, template_name, context) 
+
+@login_required
+def delete_category_archives(request, category_archive_id):
+    archives = get_object_or_404(CategoryArchives, id=category_archive_id)
+    try:
+        archives.delete()
+        messages.success(request, 'Removido com sucesso!')        
+        return HttpResponseRedirect(reverse('backends:index_category_archives'))
+    except IntegrityError:
+        messages.error(request, 'Está é uma categoria mãe!')        
+        return HttpResponseRedirect(reverse('backends:index_category_archives'))

@@ -72,7 +72,7 @@ class Institutionals(models.Model):
 class CategoryArchives(models.Model):
     name = models.CharField('Categoria', max_length=200)
     slug = models.SlugField(unique=True, blank=True, null=True)
-    parent = models.ForeignKey('self', blank=True, null=True, related_name='child', on_delete=models.DO_NOTHING)
+    mother_category = models.ForeignKey('self', blank=True, null=True, related_name='category', on_delete=models.SET_NULL)
        
     #Default
     created_at = models.DateTimeField('Criado em', auto_now_add=True)
@@ -97,8 +97,8 @@ class Archives(models.Model):
 
     category = models.ForeignKey(
         CategoryArchives, 
-        on_delete=models.CASCADE, 
-        related_name='category_archives', 
+        on_delete=models.SET_NULL, 
+        related_name='archives', 
         blank=True,
         null=True
     )
