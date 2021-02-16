@@ -60,7 +60,7 @@ def front_institucional(request):
 def front_links(request):    
     services = Services.objects.order_by('-created_at')
     template_name = 'links/front.html'
-    links = Links.objects.order_by('-created_at')
+    links = Links.objects.order_by('description')
     context = {
         'links': links,
         'services': services

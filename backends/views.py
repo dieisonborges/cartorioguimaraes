@@ -113,7 +113,7 @@ def password_users(request):
 @login_required
 def index_links(request):    
     template_name = 'links/index.html'
-    links = Links.objects.all
+    links = Links.objects.all().order_by('description')
     context = {
         'links': links,
     }
@@ -244,7 +244,7 @@ def update_institucional(request, slug_institucional):
 @login_required
 def index_archives(request):
     template_name = 'archives/index.html'
-    archives = Archives.objects.all()
+    archives = Archives.objects.all().order_by('name')
     context = {
         'archives': archives,
     }
