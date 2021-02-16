@@ -2,61 +2,77 @@
 
 {% block content %}
 
+
 <div class="page-title full-color">
     <div class="container">
         <div class="row">
             <div class="col-md-12">                    
                 <div class="page-title-heading">
-                    <h2 class="title">Links Úteis</h2>
+                    <h2 class="title">Links úteis</h2>
                 </div>
-                                 
             </div><!-- /.col-md-12 -->  
         </div><!-- /.row -->  
     </div><!-- /.container -->                      
-</div>
+</div><!-- /page-title -->
 
+
+
+
+
+<!-- Começa aqui o conteúdo -->
 <section class="flat-row padding-v1">
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="course-list-table">
-                    <div class="flat-all-course">                        
-
-                        <div class="courses-list">
-                            <table class="table course-list-table">
-                                
-                                <tbody>  
-                                    {% if links %}                        
-                                        {% for link in links %}                         
-                                            <tr>                                                                              
-                                                <td>
-                                                    <a href="{{ link.link }}" target="_BLANK">
-                                                        <b>{{ link.description }}</b>                                                
-                                                    </a>
-                                                    <a href="{{ link.link }}" target="_BLANK">
-                                                        <i class="fas fa-link"></i>
-                                                    </a>
-                                                        
-                                                    
-                                                </td>  
-                                            </tr> 
-                                        {% endfor %}                        
-                                    {% else %}
-                                        <tr>
-                                            <td colspan="5">Nenhum Link Encontrado.</td>                            
-                                        </tr>
-                                    {% endif %}                                      
-                                    
-                                    
-                                </tbody>
-                            </table>
-                        </div>
-                    </div><!-- /flat-list-table -->
+        <div class="row">                             
+            <div id="content" class="col-md-9">                                
+                
+                {% if links %}                        
+                    {% for link in links %} 
+                    <!-- Link - início -->
+                    <div class="event-listing event-listing-classic">
+                        <article class="post-item row event-classic-item">
+                            <div class="col-md-12 col-sm-12">
+                                <div class="content-pad">
+                                    <div class="item-content">
+                                        <div class="price main-color-1">Legislação Federal – Código Civil (Lei 10.406/02)</div>
+                                    </div>
+                                    <div class="item-meta">
+                                        <a class="flat-button" target="_blank" href="http://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm"><i class="fa fa-angle-right"></i> &nbsp; http://www.planalto.gov.br/ccivil_03/leis/2002/l10406.htm</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <!-- Link - fim -->
+                    {% endfor %}
+                {% else %}
+                    Nenhum Link Encontrado.
+                {% endif %} 
                     
+            </div>
+            <div class="col-md-3">
+                <div class="sidebar">
+                    <div class="widget widget-courses">
+                        <h2 class="widget-title">Contatos</h2>
+                            <div class="text">
+                                <a href="#"><i class="fa fa-envelope"></i> &nbsp;registrocivilpatos@gmail.com</a>
+                            </div>
+                            <div class="text">
+                                <a href="#"><i class="fa fa-phone"></i> &nbsp;(34) 9 9835-7168</a>
+                            </div>
+                            <div class="text">
+                                <a href="#"><i class="fa fa-phone"></i> &nbsp;(34) 3823-1445</a>
+                            </div>
+                            <div class="text">
+                                <br>
+                                <p><i class="fa fa-envelope"></i> &nbsp;Rua Dr. Marcolino, 139 – Centro, Patos de Minas – MG – CEP 38700-160</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div><!-- /col-md-9 -->
-        </div><!-- /row -->
-    </div><!-- /container -->
+            </div>
+        </div>
+    </div>
 </section>
-    
+<!-- Termina aqui o conteúdo -->
+   
 {% endblock %}

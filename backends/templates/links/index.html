@@ -43,8 +43,8 @@
                     <tr>
                       <th>Link</th>
                       <th>Descrição</th>                      
-                      <th>Edit</th>
-                      <th>Delete</th>
+                      <th>Editar</th>
+                      <th>Excluir</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -62,12 +62,12 @@
                                     </a>
                                 </td>
                                 
-                                <td align="center">
+                                <td>
                                     <a href="{% url 'backends:update_links' link.id %}" class="btn">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                 </td>
-                                <td align="center">
+                                <td>
                                     <a href="javascript:void(0)" data-toggle="modal" class="text-danger"
                                         data-url="{% url 'backends:delete_links' link.id %}"
                                         data-target="#deleteItemModal"
