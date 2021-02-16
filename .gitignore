@@ -5,3 +5,4 @@ media/
 static/
 media/*
 static/*
+__pycache__/
