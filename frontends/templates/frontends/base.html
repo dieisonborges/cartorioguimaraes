@@ -154,121 +154,98 @@
 
 
 
-        <footer class="footer full-color">
-            <section id="bottom">
-                <div class="section-inner">
+            <footer class="footer full-color">
+                <section id="bottom">
+                    <div class="section-inner">
+                        <div class="container">
+                            <div class="row normal-sidebar">
+    
+                                <div class="col-md-3  widget widget-nav-menu">
+                                    <div class=" widget-inner">
+                                        <div class="menu-law-business-container">
+                                            <img src="images/logo.png" alt="image">
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class=" col-md-4  widget widget-nav-menu">
+                                    <div class=" widget-inner">
+                                        <h2 class="widget-title maincolor1">Departamentos</h2>
+                                        <div class="menu-engineering-container">
+                                            <ul id="menu-engineering" class="menu">
+                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1287">
+                                                    <a href="mailto:segundavia@cartorioguimaraes.com.br">segundavia@cartorioguimaraes.com.br</a>
+                                                </li>
+                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1288">
+                                                    <a href="mailto:nascimentoeobito@cartorioguimaraes.com.br">nascimentoeobito@cartorioguimaraes.com.br</a>
+                                                </li>
+                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1289">
+                                                    <a href="mailto:casamento@cartorioguimaraes.com.br">casamento@cartorioguimaraes.com.br</a>
+                                                </li>
+                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1290">
+                                                    <a href="mailto:averbacao@cartorioguimaraes.com.br">averbacao@cartorioguimaraes.com.br</a>
+                                                </li>
+                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1291">
+                                                    <a href="mailto:apostilamento@cartorioguimaraes.com.br">apostilamento@cartorioguimaraes.com.br</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>  
+                                </div>
+    
+                                <div class=" col-md-5  widget widget-nav-menu">
+                                    <div class=" widget-inner">
+                                        <h2 class="widget-title maincolor1">Fale com a gente</h2>
+                                        <div class="textwidget">
+                                            <p>
+                                                <a href="https://api.whatsapp.com/send?phone=5534998357168&amp;text=Ol%C3%A1!" target="_blank"><i class="fab fa-whatsapp"></i>&nbsp; (34) 9 9835-7168</a>
+                                                <br>
+                                                <i class="fa fa-phone"></i>&nbsp; (34) 3823-1445
+                                                <br>
+                                                <i class="fa fa-envelope"></i>&nbsp; registrocivilpatos@gmail.com
+                                                <br>
+                                                <i class="fas fa-map-marker-alt"></i>&nbsp; Rua Dr. Marcolino nº 139 – Centro – Patos de Minas – MG – CEP 38700-160
+                                            </p>
+                                        </div>
+                                    </div>  
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </section>
+    
+                <div id="bottom-nav">
                     <div class="container">
-                        <div class="row normal-sidebar">
-                            
-                            <div class="col-md-3  widget widget-nav-menu">
-                                <div class=" widget-inner">
-                                    <h2 class="widget-title maincolor1">Serviços</h2>
-                                    <div class="menu-law-business-container">
-                                        <ul id="menu-law-business" class="menu">
-                                            {% if services %}                        
-                                                {% for service in services %}
-                                                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1280">
-                                                        <a href="{% url 'frontends:front_services' service.slug %}">{{ service.name }}</a>
-                                                    </li>                                                
-                                                {% endfor %}                        
-                                            {% else %}
-                                                    <li><a href="#">Em breve</a>
-                                            {% endif %}
-                                        </ul>
-                                    </div>
-                                </div>
+                        <div class="link-center">
+                            <div class="line-under"></div>
+                            <a class="flat-button go-top-v1 style1" href="#top"><i class="fas fa-chevron-up"></i></a>
+                        </div>
+                        <div class="row footer-content">
+                            <div class="copyright col-md-9">
+                                <b>Cartório Guimarães</b> – Registro Civil das Pessoas Naturais de Patos de Minas – MG
+                                <br>
+                                Desenvolvido por <a target="_blank" href="https://agenciapropagando.com.br"><b>Agência Propagando</b></a>
                             </div>
-
-                            <div class=" col-md-3  widget widget-nav-menu">
-                                <div class=" widget-inner">
-                                    <h2 class="widget-title maincolor1">LINKS ÚTEIS</h2>
-                                    <div class="menu-engineering-container">
-                                        <ul id="menu-engineering" class="menu">
-                                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1287">
-                                                <a href="#">Information Technology</a>
-                                            </li>
-                                            
-                                        </ul>
-                                    </div>
-                                </div>  
-                            </div>
-
-                            <div class=" col-md-3  widget widget-nav-menu">
-                                <div class=" widget-inner">
-                                    <h2 class="widget-title maincolor1">INSTITUCIONAL</h2>
-                                    <div class="menu-higher-education-container">
-                                        <ul id="menu-higher-education" class="menu">
-                                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1294">
-                                                <a href="#">Master Of Taxation</a>
-                                            </li>
-                                            
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class=" col-md-3 border widget widget-text">
-                                <div class=" widget-inner">
-                                    <h2 class="widget-title maincolor1">CONTATO</h2>
-                                    <div class="textwidget">
-                                        <p>
-                                            <b><i class="fa fa-envelope"></i></b> registrocivilpatos@gmail.com<br>
-                                            <a href="https://api.whatsapp.com/send?phone=5534998357168&text=Ol%C3%A1!" target="_BLANK">
-                                                <b><i class="fab fa-whatsapp"></i></b> (34) 9 9835-7168<br>
-                                            </a>
-                                            <b><i class="fa fa-phone"></i></b> (34) 3823-1445<br><br>                                            
-                                            <b><i class="fas fa-map-marker-alt"></i></b> Rua Dr. Marcolino nº 139 – Centro – Patos de Minas – MG – CEP 38700-160</p>
-                                    </div>
-                                </div>
-                            </div>                           
-
-                            
+                            <nav class="col-md-3 footer-social">
+                                <ul class="social-list">
+                                    <li>
+                                        <a target="_blank" href="https://www.facebook.com/pages/Cart%C3%B3rio/398348033566354/" class="btn btn-default social-icon">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" href="https://www.instagram.com/cartorioguimaraes/" class="btn btn-default social-icon">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
                         </div>
                     </div>
                 </div>
-            </section>
-
-            <div id="bottom-nav">
-                <div class="container">
-                    <div class="link-center">
-                        <div class="line-under"></div>
-                        <a class="flat-button go-top-v1 style1" href="#top">
-                            <i class="fas fa-chevron-up"></i> 
-                        </a>
-                    </div>
-                    <div class="row footer-content">
-                        <div class="copyright col-md-6">
-                            © 2021 Cartório Guimarães - Copyright - Todos os direitos reservados.
-                        </div>
-                        <nav class="col-md-6 footer-social">
-                            <ul class="social-list">
-                                <li>
-                                    <a href="#" class="btn btn-default social-icon">
-                                        <i class="fa fa-facebook"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="btn btn-default social-icon">
-                                        <i class="fa fa-twitter"></i>
-                                    </a>
-                                </li>
-                                <li>    
-                                    <a href="#" class="btn btn-default social-icon">
-                                        <i class="fa fa-linkedin"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="btn btn-default social-icon">
-                                        <i class="fa fa-google-plus"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div><!--/row-->
-                </div><!--/container-->
-            </div>
-        </footer>
-
+            </footer>
+    
         <!-- Javascript -->
         <script type="text/javascript" src="{% static 'frontends/javascript/jquery.min.js' %}"></script>
         <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
