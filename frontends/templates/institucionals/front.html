@@ -15,45 +15,49 @@
     </div><!-- /.container -->                      
 </div>
 
-<section class="flat-row padding-v1">
+<section class="main-content course-single">
     <div class="container">
         <div class="row">
-            <div class="col-md-8">
-                <div class="course-list-table">
-                    <div class="flat-all-course">                        
+            <div class="col-md-9">
 
-                        <div class="courses-list">
+                <article class="post-course">
+                    <div class="row">
+
+                        <div class="col-md-12">
                             {{ principal.description }}
                         </div>
-                    </div><!-- /flat-list-table -->
-                    
-                </div>
-            </div><!-- /col-md-9 -->
-            <div class="col-md-4">
-                <div class="course-list-table">
-                    <div class="flat-all-course">                        
 
-                        <div class="courses-list">
-                            <b>{{ missao.name }}</b>
-                            <br>
-                            {{ missao.description }}
-                        </div>
-                        <br><br>
-                        <div class="courses-list">
-                            <b>{{ visao.name }}</b>
-                            <br>
-                            {{ visao.description }}
-                        </div>
-                        <br><br>
-                        <div class="courses-list">
-                            <b>{{ valores.name }}</b>
-                            <br>
-                            {{ valores.description }}
-                        </div>
-                    </div><!-- /flat-list-table -->
-                    
-                </div>
+                    </div>
+                </article>
+
             </div><!-- /col-md-9 -->
+            <div class="col-md-3">
+                <div class="sidebar">
+
+                    <div class="widget widget-courses">
+                        <h2 class="widget-title">{{ missao.name }}</h2>
+                        <div class="text">
+                            <p>{{ missao.description }}</p>
+                        </div>
+                    </div>
+
+                    <div class="widget widget-courses">
+                        <h2 class="widget-title">{{ visao.name }}</h2>
+                        <div class="text">
+                            <p>{{ visao.description }}</p>
+                        </div>
+                    </div>
+
+                    <div class="widget widget-courses">
+                        <h2 class="widget-title">{{ valores.name }}</h2>
+                        <div class="text">
+                            <p>{{ valores.description }}</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
         </div><!-- /row -->
     </div><!-- /container -->
 </section>
