@@ -30,7 +30,7 @@ def front_institucional(request):
     template_name = 'institucionals/front.html'
     services = Services.objects.order_by('-created_at')
 
-    principals = Institutionals.objects.filter(slug='principal')[:1]  
+    principals = Institutionals.objects.filter(slug='institucional')[:1]  
     for principal in principals:
         pass 
 
