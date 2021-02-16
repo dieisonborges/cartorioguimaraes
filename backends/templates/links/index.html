@@ -24,7 +24,7 @@
                     </a>
                 </h3> 
                 
-                
+                <!--
                 <form id="search" action="#" method="GET"  class="card-tools">
                   <div class="input-group input-group-sm" style="width: 100%">                
                         <input type="text" name="search" class="form-control float-right" placeholder="Buscar" value="">
@@ -33,6 +33,8 @@
                         </div>
                   </div>
                 </form>
+                -->
+                
               </div>
               <!-- /.card-header -->
               <div class="card-body table-responsive p-0">
@@ -60,13 +62,17 @@
                                     </a>
                                 </td>
                                 <td align="center">
-                                    <a href="{% url 'backends:update_links' link.id %}">
+                                    <a href="{% url 'backends:update_links' link.id %}" class="btn">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                 </td>
                                 <td align="center">
-                                    <a href="{% url 'backends:delete_links' link.id %}" class="text-danger">
-                                        <i class="fas fa-trash-alt"></i>
+                                    <a href="javascript:void(0)" data-toggle="modal" class="text-danger"
+                                        data-url="{% url 'backends:delete_links' link.id %}"
+                                        data-target="#deleteItemModal"
+                                        data-message="Tem certeza que deseja apagar?"
+                                        >
+                                            <i class="fas fa-trash-alt"></i>
                                     </a>
                                 </td>
                                 
@@ -87,5 +93,24 @@
           </div>
         </div>
         <!-- /.row -->
+
+
+          <!-- Modal -->
+
+    
+        
+
+
+    </div>
+
+    </div>
+
+  </div>
+</div>
     
 {% endblock %}
+
+{% block scripts %}
+
+
+{% endblock scripts %}
