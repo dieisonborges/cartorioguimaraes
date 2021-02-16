@@ -11,7 +11,7 @@ class Links(models.Model):
     """ Links """    
     #Columns
     link = models.TextField('Link')
-    description = models.TextField('Descrição')
+    description = models.CharField('Descrição', max_length=200)
 
     #Default
     created_at = models.DateTimeField('Criado em', auto_now_add=True)
