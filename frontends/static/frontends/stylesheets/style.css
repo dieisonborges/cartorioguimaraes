@@ -999,7 +999,7 @@
 }
 
 .header.upscrolled #mainnav > ul > li > a {
-    padding: 27px 15px 10px 15px;
+    padding: 27px 15px 10px 15px; 
 }
 
 .header.upscrolled #mainnav > ul > li > a:before {
