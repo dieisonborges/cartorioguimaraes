@@ -1,6 +1,5 @@
 .env
 /media/*
 media/
-static/
 media/*
 __pycache__/
