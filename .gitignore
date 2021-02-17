@@ -1,8 +1,6 @@
 .env
-/static/*
 /media/*
 media/
 static/
 media/*
-static/*
 __pycache__/
